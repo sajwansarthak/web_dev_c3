@@ -1,0 +1,40 @@
+<!-- State and component  ROUGH -->
+<body>
+    <input type="text"></input>
+    <button onclick="addTodo()">Add todo!</button>
+    <div id="todos"></div>
+    <script>
+      let todos = [];
+      function addTodo() {
+        todos.push({
+          title: document.querySelector("input").value
+        })
+        render();
+      }
+  
+      function deleteTodo() {
+        
+        render();
+      }
+   
+      function render() {
+        document.querySelector("#todos").innerHTML = ""
+        for(let i = 0; i< todos.length;i++){
+            const todo = todos[i];
+            const h1El = document.createElement("h1");
+            const buttonEl = document.createElement("button");
+            h1El.innerHTML = todos.title;
+            buttonEl.innerHTML = "delete";
+            const addEl = document.createElement("div")
+
+            h1El.appendChild("div");
+            buttonEl.appendChild("div")
+
+            document.querySelector("#todos").appendChild("div")
+
+        }
+       
+
+      }
+    </script>
+  </body>
