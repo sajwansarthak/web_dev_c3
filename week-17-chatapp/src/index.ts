@@ -30,6 +30,11 @@ wss.on("connection",(socket) =>{
         //Message send from the server
             //socket.send(message.toString() + ": sent from the server")        
     })
+
+    //If a client disconnect we should not send message to them disconnect logic
+    socket.on("disconnect", () =>{
+        allSockets = allSockets.filter(x => x != socket)
+    })
 })
 
 //Express
